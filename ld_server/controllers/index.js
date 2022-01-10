@@ -9,7 +9,7 @@ const createTodos = async (req, res) => {
   });
   todo.save();
   console.log("Todo Created !");
-  res.json(todo);
+  res.status(201).json(todo);
 };
 
 // Get all Todos
@@ -19,7 +19,7 @@ const getAllTodos = async (req, res) => {
   if (todos.length === 0) {
     return res.send("Todo List is Empty");
   }
-  res.json(todos);
+  res.status(200).json(todos);
 };
 
 // Complete Todo
@@ -27,14 +27,14 @@ const completeTodos = async (req, res) => {
   const todo = await Todo.findById(req.params.id);
   todo.complete = !todo.complete;
   todo.save();
-  res.json(todo);
+  res.status(200).json(todo);
 };
 
 // Delete Todo
 const deleteTodo = async (req, res) => {
   const result = await Todo.findByIdAndDelete(req.params.id);
   console.log("Todo Deleted !");
-  res.json(result);
+  res.status(200).json(result);
 };
 
 module.exports = {
