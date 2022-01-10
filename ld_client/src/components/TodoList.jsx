@@ -4,7 +4,6 @@ import {
   CardContent,
   Typography,
   Container,
-  Button,
   IconButton,
 } from "@mui/material";
 import {
@@ -16,7 +15,6 @@ import {
 const API = "http://localhost:5000/api/v1";
 
 const TodoList = ({ todoNo, todo, todoID, completed, deleteTodo }) => {
-  const [todos, setTodos] = useState([]);
   const [isCompleted, setIsCompleted] = useState(completed);
 
   const completeTodo = async (todoID) => {
@@ -51,7 +49,6 @@ const TodoList = ({ todoNo, todo, todoID, completed, deleteTodo }) => {
             {todoNo + 1}.&nbsp;{todo}
             <IconButton
               style={{ float: "right", color: "red" }}
-              // onClick={delTodo}
               onClick={deleteTodo}
             >
               <Delete></Delete>

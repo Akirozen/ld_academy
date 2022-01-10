@@ -7,7 +7,7 @@ POST http://localhost:5000/api/v1/createTodos
 Content-Type: application/json
 
 {
-  "text":"Order asdfsdf!!!"
+  "text":"Go to gym"
 }
 
 ###
@@ -15,4 +15,4 @@ Content-Type: application/json
 GET http://localhost:5000/api/v1/completeTodos/61dc2d24e183e81cac4f9179
 ###
 
-DELETE http://localhost:5000/api/v1/getSingleTodo/61dbfeda47b2c2a5aa66d6b4
+DELETE http://localhost:5000/api/v1/getSingleTodo/61dc49d386442b2d188159d4

@@ -6,5 +6,5 @@ module.exports = () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => console.log("Connected to Mongodb......"));
+    .then(() => console.log("Connected to database..."));
 };

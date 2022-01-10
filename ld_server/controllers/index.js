@@ -37,10 +37,6 @@ const deleteTodo = async (req, res) => {
   res.json(result);
 };
 
-// const testRoute = (req, res) => {
-//   res.send('TEST SUCCESFUL !!!')
-// }
-
 module.exports = {
   getAllTodos,
   createTodos,

@@ -34,7 +34,7 @@ const TodoForm = () => {
         <form onSubmit={createTodo}>
           <FormControl fullWidth={true}>
             <TextField
-              label="Add todo"
+              label="Add something"
               variant="standard"
               onChange={handleChange}
               required={true}
@@ -47,7 +47,7 @@ const TodoForm = () => {
               style={{ marginTop: 5 }}
             >
               <Add />
-              Add
+              Create
             </Button>
           </FormControl>
         </form>

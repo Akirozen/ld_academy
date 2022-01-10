@@ -12,15 +12,15 @@ function App() {
     getTodos();
   }, []);
 
-  const getTodos = () => {
-    fetch(API + "/getAllTodos")
+  const getTodos = async () => {
+    await fetch(API + "/getAllTodos")
       .then((res) => res.json())
       .then((data) => setTodos(data))
       .catch((err) => console.log("Error: ", err));
   };
 
   const deleteTodo = async (todoID) => {
-    const data = await fetch(API + "/getSingleTodo/" + todoID, {
+    await fetch(API + "/getSingleTodo/" + todoID, {
       method: "DELETE",
     }).then((res) => res.json());
 
@@ -33,6 +33,7 @@ function App() {
     <>
       <Navbar />
       <TodoForm />
+
       {todos.map((todo, index) => {
         return (
           <TodoList
