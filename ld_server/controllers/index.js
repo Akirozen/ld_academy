@@ -4,12 +4,11 @@ const Todo = require("../models/Todo");
 
 // Create Todo
 const createTodos = async (req, res) => {
-  console.log("FROM CLIENT", req.body);
   const todo = await new Todo({
     text: req.body.text,
   });
   todo.save();
-  console.log("complete");
+  console.log("Todo Created !");
   res.json(todo);
 };
 
@@ -34,7 +33,7 @@ const completeTodos = async (req, res) => {
 // Delete Todo
 const deleteTodo = async (req, res) => {
   const result = await Todo.findByIdAndDelete(req.params.id);
-  console.log("Todo Deleted");
+  console.log("Todo Deleted !");
   res.json(result);
 };
 

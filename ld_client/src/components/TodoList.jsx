@@ -15,7 +15,7 @@ import {
 
 const API = "http://localhost:5000/api/v1";
 
-const TodoList = ({ todoNo, todo, todoID, completed }) => {
+const TodoList = ({ todoNo, todo, todoID, completed, deleteTodo }) => {
   const [todos, setTodos] = useState([]);
   const [isCompleted, setIsCompleted] = useState(completed);
 
@@ -26,17 +26,6 @@ const TodoList = ({ todoNo, todo, todoID, completed }) => {
     // console.log(data);
     setIsCompleted(data.complete);
   };
-
-  // const delTodo = deleteTodo(todoID);
-
-  // console.log(isCompleted);
-
-  // const deleteTodo = async (todoID) => {
-  //   const data = await fetch(API + "/getSingleTodo/" + todoID, {
-  //     method: "DELETE",
-  //   }).then((res) => res.json());
-  //   setTodos((todos) => todos.filter((todo) => todo._id !== data._id));
-  // };
 
   return (
     <Container>
@@ -63,7 +52,7 @@ const TodoList = ({ todoNo, todo, todoID, completed }) => {
             <IconButton
               style={{ float: "right", color: "red" }}
               // onClick={delTodo}
-              onClick={deleteTodo(todoID)}
+              onClick={deleteTodo}
             >
               <Delete></Delete>
             </IconButton>

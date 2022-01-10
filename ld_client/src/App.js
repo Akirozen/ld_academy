@@ -10,10 +10,7 @@ function App() {
 
   useEffect(() => {
     getTodos();
-    // deleteTodo();
   }, []);
-
-  console.log(todos);
 
   const getTodos = () => {
     fetch(API + "/getAllTodos")
@@ -22,15 +19,13 @@ function App() {
       .catch((err) => console.log("Error: ", err));
   };
 
-  // const deleteTodo = async (todoID) => {
-  //   const data = await fetch(API + "/getSingleTodo/" + todoID, {
-  //     method: "DELETE",
-  //   }).then((res) => res.json());
-  //   // .then((data) => console.log(data));
+  const deleteTodo = async (todoID) => {
+    const data = await fetch(API + "/getSingleTodo/" + todoID, {
+      method: "DELETE",
+    }).then((res) => res.json());
 
-  //   // .then((data) => setTodos(data.filter((todo) => todo._id !== todoID)));
-  //   // setTodos((todos) => todos.filter((todo) => todo._id !== todoID));
-  // };
+    setTodos((todos) => todos.filter((todo) => todo._id !== todoID));
+  };
 
   console.log(todos);
 
@@ -46,7 +41,7 @@ function App() {
             key={todo._id}
             todoID={todo._id}
             completed={todo.complete}
-            // deleteTodo={deleteTodo}
+            deleteTodo={() => deleteTodo(todo._id)}
           />
         );
       })}
