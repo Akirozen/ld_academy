@@ -1,2 +1,15 @@
 
-GET http://localhost:5000/api/v1/testRoute
+GET http://localhost:5000/api/v1/getAllTodos
+
+###
+
+POST http://localhost:5000/api/v1/createTodos
+Content-Type: application/json
+
+{
+  "text":"Order breads"
+}
+
+###
+
+DELETE http://localhost:5000/api/v1/getSingleTodo/61db7dea4ed00f9c14617650

@@ -1,15 +1,17 @@
 const express = require('express')
-const { testRoute } = require('../controllers')
+const { getAllTodos, createTodo, deleteTodo } = require('../controllers')
 
 const router = express.Router()
 
 // --- API Routes
 
 // POST routes
+router.post('/createTodos', createTodo)
 
 // GET routes
-router.get('/testRoute', testRoute)
+router.get('/getAllTodos', getAllTodos)
 
 // DELETE routes
+router.delete('/getSingleTodo/:id', deleteTodo)
 
-module.exports = { routes: router }
+module.exports = router
