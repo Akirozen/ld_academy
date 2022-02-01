@@ -9,7 +9,7 @@ const TodoForm = () => {
   const [todos, setTodos] = useState([]);
 
   const handleChange = (e) => {
-      setText(e.target.value);
+    setText(e.target.value);
   };
 
   const createTodo = async () => {
